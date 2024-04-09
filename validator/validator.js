@@ -7,11 +7,7 @@ const {
 const signUp = async (req, res, next) => {
   try {
     const { walletaddress, email, password } = req.body;
-    if (!walletaddress) {
-      validarionerrorResponse(res, {
-        message: "walletaddress is required",
-      });
-    } else if (!email) {
+    if (!email) {
       return validarionerrorResponse(res, { message: "email is required" });
     } else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
       return validarionerrorResponse(res, {
