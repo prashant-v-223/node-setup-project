@@ -4,10 +4,16 @@ const Works = require('../models/Works');
 router.post('/', async (req, res) => {
   try {
     const newWork = new Works(req.body);
-    console.log("req.body", req.body);
+    console.log("req.body",);
+    if (req.body.editingId === null) {
 
-    const savedWork = await newWork.save();
-    res.json(savedWork);
+      const savedWork = await newWork.save();
+      res.json(savedWork);
+    } else {
+
+      const savedWork = await Works.findByIdAndUpdate({ _id: req.body.editingId }, { ...req.body })
+      res.json(savedWork);
+    }
   } catch (err) {
     console.log("err.message", err.message);
 
