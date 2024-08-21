@@ -7,7 +7,7 @@ const WorksSchema = new mongoose.Schema({
     filterName: { type: String, required: false },
     description: { type: String, required: true },
     description1: { type: String, required: false },
-    type: { type: String, enum: ['work', 'blog', 'client'], required: true }  // New field to differentiate
+    type: { type: String, enum: ['work', 'blog', 'client','service'], required: true }  // New field to differentiate
 },
     {
         timestamps: true,
