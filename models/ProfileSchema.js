@@ -1,4 +1,9 @@
 const mongoose = require('mongoose');
+const activitySchema = new mongoose.Schema({
+    id: { type: Number, required: true }, // Use Number for the unique ID
+    name: { type: String, required: true },
+    value: { type: String, required: true }
+});
 
 const ProfileSchema = new mongoose.Schema({
     tital1: { type: String, required: true },
@@ -9,8 +14,7 @@ const ProfileSchema = new mongoose.Schema({
     tital: { type: String, required: true },
     number: { type: Number, required: true },
     email: { type: String, required: true },
-    WD: { type: Number, required: true },
-    activity: { type: [String], required: true },
+    WD: { type: Number, required: true }, activity: [activitySchema],
     AD: { type: Number, required: true },
     DD: { type: Number, required: true },
     GD: { type: Number, required: true },
