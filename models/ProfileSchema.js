@@ -10,6 +10,7 @@ const ProfileSchema = new mongoose.Schema({
     number: { type: Number, required: true },
     email: { type: String, required: true },
     WD: { type: Number, required: true },
+    activity: { type: [String], required: true },
     AD: { type: Number, required: true },
     DD: { type: Number, required: true },
     GD: { type: Number, required: true },
