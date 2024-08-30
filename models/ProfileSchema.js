@@ -7,7 +7,8 @@ const activitySchema = new mongoose.Schema({
 const FunFactSchema = new mongoose.Schema({
     id: { type: Number, required: true }, // Use Number for the unique ID
     name: { type: String, required: true },
-    value: { type: String, required: true }
+    value: { type: String, required: true },
+    symbol: { type: String, required: true }
 });
 
 const ProfileSchema = new mongoose.Schema({
