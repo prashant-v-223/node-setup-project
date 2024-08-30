@@ -6,6 +6,8 @@ const Profile = require('../models/ProfileSchema');
 router.post('/', async (req, res) => {
   try {
     const newProfile = new Profile(req.body);
+    console.log("req.body", req.body);
+
     const savedProfile = await newProfile.save();
     res.json(savedProfile);
   } catch (err) {

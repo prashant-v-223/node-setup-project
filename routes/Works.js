@@ -4,8 +4,8 @@ const Works = require('../models/Works');
 router.post('/', async (req, res) => {
   try {
     const newWork = new Works(req.body);
-    console.log("req.body",);
-    if (req.body.editingId === null) {
+    console.log("req.body", req.body.editingId);
+    if (req.body.editingId === undefined) {
 
       const savedWork = await newWork.save();
       res.json(savedWork);
