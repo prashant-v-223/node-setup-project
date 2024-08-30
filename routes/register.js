@@ -3,19 +3,13 @@ const router = express.Router();
 const validator = require("../validator/validator");
 const registerController = require("../controllers/register");
 
-router.post("/signUp", (req, res) => {
-  return registerController.register.signUp(req, res);
+router.post("/changePassword", (req, res) => {
+  return registerController.register.resetPassword(req, res);
+});
+router.post("/forgotPassword", (req, res) => {
+  return registerController.register.forgotPassword(req, res);
 });
 router.post("/login", (req, res) => {
-  return registerController.register.signIn(req, res);
-});
-router.post("/subscribe", (req, res) => {
-  return registerController.register.subscribe(req, res);
-});
-router.get("/subscriberewords", (req, res) => {
-  return registerController.register.subscriberewords(req, res);
-});
-router.get("/referralrewords", (req, res) => {
-  return registerController.register.referralrewords(req, res);
+  return registerController.register.login(req, res);
 });
 module.exports = router;
