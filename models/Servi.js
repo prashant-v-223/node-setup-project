@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 
 const ServiSchema = new mongoose.Schema({
+    tital1: { type: String, required: true },
+    subtital: { type: String, required: true },
     pImg: { type: String, required: true }, // Main image
     ps1img: { type: String, required: false }, // Secondary image
     title: { type: String, required: true },

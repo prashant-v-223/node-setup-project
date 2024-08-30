@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 
 const ProfileSchema = new mongoose.Schema({
+    tital1: { type: String, required: true },
+    subtital: { type: String, required: true },
     name: { type: String, required: true },
     img: { type: String, required: true },
     dec: { type: String, required: true },
